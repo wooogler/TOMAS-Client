@@ -1,5 +1,6 @@
 <script lang="ts">
 	import ChatHistory from './ChatHistory.svelte';
+	import HtmlScreen from './HtmlScreen.svelte';
 </script>
 
 <svelte:head>
@@ -7,7 +8,7 @@
 	<meta name="description" content="Task-Oriented Multimodal Agent System" />
 </svelte:head>
 
-<h1>TOMAS</h1>
 <div class="flex flex-1">
+	<HtmlScreen />
 	<ChatHistory />
 </div>

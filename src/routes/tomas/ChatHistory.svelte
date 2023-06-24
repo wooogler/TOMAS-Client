@@ -12,7 +12,7 @@
 	}
 </script>
 
-<div class="flex-1 bg-white p-4 w-full">
+<div class=" bg-white p-4 w-1/3">
 	{#each chats as chat (chat.id)}
 		{#if chat.role === 'ai'}
 			<div class="chat chat-start">
