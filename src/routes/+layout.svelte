@@ -20,7 +20,7 @@
 	.app {
 		display: flex;
 		flex-direction: column;
-		min-height: 100vh;
+		height: 100vh;
 	}
 
 	main {
@@ -32,6 +32,7 @@
 		max-width: 100rem;
 		margin: 0 auto;
 		box-sizing: border-box;
+		overflow: auto;
 	}
 
 	footer {

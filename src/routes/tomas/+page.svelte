@@ -1,6 +1,9 @@
 <script lang="ts">
+	import type { PageData } from './$types';
 	import ChatHistory from './ChatHistory.svelte';
 	import HtmlScreen from './HtmlScreen.svelte';
+
+	export let data: PageData;
 </script>
 
 <svelte:head>
@@ -8,7 +11,7 @@
 	<meta name="description" content="Task-Oriented Multimodal Agent System" />
 </svelte:head>
 
-<div class="flex flex-1">
+<div class="flex h-full">
 	<HtmlScreen />
-	<ChatHistory />
+	<ChatHistory {data} />
 </div>
