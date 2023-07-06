@@ -3,7 +3,7 @@
 	let simplifiedHTML = '';
 
 	async function gotoPage() {
-		const response = await fetch('http://localhost:8000/enter', {
+		const response = await fetch('http://0.0.0.0:8000/api/screen/navigate', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -14,21 +14,14 @@
 		if (response.ok) {
 			console.log(`Success to go to ${url}`);
 			url = '';
+			const { rawHtml, simpleHtml } = await response.json();
+			simplifiedHTML = simpleHtml;
 		}
 	}
 
 	function handleKeyDown(event: KeyboardEvent) {
 		if (event.key === 'Enter') {
 			gotoPage();
-		}
-	}
-
-	async function loadPage() {
-		const response = await fetch('http://localhost:8000/html');
-
-		if (response.ok) {
-			const html = await response.text();
-			simplifiedHTML = html;
 		}
 	}
 </script>
@@ -45,7 +38,6 @@
 				class="input input-bordered w-full"
 				on:keydown={handleKeyDown}
 			/>
-			<button class="btn" on:click={() => loadPage()}>Load HTML</button>
 		</div>
 		<div class="overflow-auto flex-1">
 			<div>{@html simplifiedHTML}</div>

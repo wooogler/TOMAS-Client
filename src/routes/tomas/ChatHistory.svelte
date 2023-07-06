@@ -7,12 +7,12 @@
 <div class=" bg-white p-4 w-1/3 flex flex-col h-full">
 	<div class="flex flex-1 flex-col h-full overflow-auto">
 		{#if data.chatHistory}
-			{#each data.chatHistory as chat (chat.timestamp)}
-				{#if chat.role === 'ai'}
+			{#each data.chatHistory as chat (chat.id)}
+				{#if chat.role === 'AI'}
 					<div class="chat chat-start">
 						<div class="chat-bubble">{chat.content}</div>
 					</div>
-				{:else if chat.role === 'human'}
+				{:else if chat.role === 'HUMAN'}
 					<div class="chat chat-end">
 						<div class="chat-bubble">{chat.content}</div>
 					</div>
